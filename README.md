@@ -72,28 +72,3 @@ Esta é uma API Ruby on Rails para [descrição da API].
 
     A API estará disponível em `http://localhost:3000`.
 
-## Endpoints da API
-
-* **[Endpoint 1]**: `[Método]` `[URL]` - [Descrição]
-* **[Endpoint 2]**: `[Método]` `[URL]` - [Descrição]
-* **[Endpoint 3]**: `[Método]` `[URL]` - [Descrição]
-    * Exemplo de requisição:
-        * curl -X POST \\
-            http://localhost:3000/influencers \\
-            -H 'Content-Type: application/json' \\
-            -d '{
-            "influencer": {
-            "name": "Nome do Influenciador",
-            "username": "nome\_de\_usuario\_unico",
-            "platform": "Instagram",
-            "followers": 10000,
-            "email": "email@example.com"
-            }
-            }'
-
-## Testes
-
-Para executar os testes, utilize o seguinte comando:
-
-```bash
-rails test
