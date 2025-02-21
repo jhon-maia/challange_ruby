@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :influencer_campaigns
   resources :campaigns
   resources :influencers
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  influencer: one
+  campaign: one
+  custom_metrics: 
+
+two:
+  influencer: two
+  campaign: two
+  custom_metrics: 

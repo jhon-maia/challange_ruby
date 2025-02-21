@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_02_20_014324) do
+ActiveRecord::Schema[7.2].define(version: 2025_02_21_031435) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,16 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_20_014324) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "influencer_campaigns", force: :cascade do |t|
+    t.bigint "influencer_id", null: false
+    t.bigint "campaign_id", null: false
+    t.jsonb "custom_metrics"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_influencer_campaigns_on_campaign_id"
+    t.index ["influencer_id"], name: "index_influencer_campaigns_on_influencer_id"
+  end
+
   create_table "influencers", force: :cascade do |t|
     t.string "name"
     t.string "username"
@@ -33,4 +43,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_20_014324) do
     t.datetime "updated_at", null: false
     t.index ["username"], name: "index_influencers_on_username", unique: true
   end
+
+  add_foreign_key "influencer_campaigns", "campaigns"
+  add_foreign_key "influencer_campaigns", "influencers"
 end
